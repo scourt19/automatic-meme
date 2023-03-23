@@ -1,0 +1,8 @@
+• Gamekeeper (gamekeeperId, username, password, email)
+• Player (playerId, username, password, email, points, bin, storeItems, memberSince)
+• Resource (resourceId, title, description, url)
+• StoreItem (itemId, name, description, cost)
+• Trash (trashId, name, description, value)
+• Event (eventId, trashId, locationId, questionSet, status, startDateTime, endDateTime)
+• Question (questionId, question, answer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4)
+• Location (locationId, buildingName, qrCode)

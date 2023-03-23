@@ -1,0 +1,138 @@
+====================
+Work in progress...
+====================
+
+
+{
+	"API":{
+		"WebClient":{
+			"PROTOCOL":"HTTPS",
+			"Dependency": ["Django"],
+			"Desc":"The webpage frontend that interacts with the user and communicates with the server.",
+			"Functionalities":{
+				"Login":{
+					"Desc":"Logs an existing user in for the browser session.",
+					"Form":[
+						"UserName/Credential","Password",
+					]
+				},
+				"Register":{
+					"Desc":"Registers a user for the application.",
+					"Form":[
+						"UserName","Credential","Password",
+					]
+				},
+				"Index":{
+					"Desc":"Describes the application and greets the user."
+				},
+				"SeekTrash":{
+					"Desc":"Seeks out trash actively after a brief wait (2sec). May implement cooldown and/or daily limit."
+				},
+				"SortingMinigame":{
+					"Desc":"Interactive minigame of sorting a trash item into the correct bin."
+				},
+				"QuizMinigame":{
+					"Desc":"Interactive minigame with multiple choice questions.",
+					"Form":[
+						"SelectedAnswerIndex"
+					]
+				},
+				"DataEditing(Gamekeeper Only)":{
+					"Desc":"Modify item, quiz and question type data into the database."
+				},
+				"TypeEditing(Dev Only)":{
+					"Warning":"Experimental!",
+					"Desc":"Tool to add or remove item types and interactions."
+				}
+			},
+		},
+		"WebServer":{
+			"Dependency":["Python"],
+			"Desc":"The webserver that provides application functionalities.",
+			"Functionalities":{
+				"ReadData":{
+					"Desc":"Should read data from the database on startup."
+				},
+				"Write(AndReload)Data":{
+					"Desc":"Write valid data changes to the database (reloading type data such as trash items or bins without server restart)"
+				},
+				"SpawnTrash":{
+					"Desc":"Spawns Trash to be interacted with."
+				},
+				"Logging":{
+					"Desc":"Reports crashes and reverts to a previously working status(Automation)"
+				},
+				"JsonSpecLoad":{
+					"Warning":"Experimental!",
+					"Desc":"Loads JsonData for specification and/or data"
+				}
+			},
+			"Specification":{
+				"Modules":"Modules should be created under the higher website directory, as a top level module",
+				"Environment":"From the source directory, run in bash shell:
+				$ source venv/bin/activate
+				to activate the preset python Environment.
+				$ python3 -m pip install -r requirements.txt
+				if dependencies are missing"
+			}
+		},
+		"DataBase":{
+			"Proposed Dependency":["SQLite"],
+			"Desc":"The database system that stores all application information.",
+			"Data":{
+				"List[User] Users":{
+					"Name":"String"
+					"UserName":"String",
+					"Password":"String",
+					"Credentials":{
+						"PhoneNumber":"Integer",
+						"EmailAddress":"String",
+					},
+					"UUID":"String",
+					"Avatar":"Image Preset Enum"
+				},
+				"List[Player] Players":{
+					"Extends":"User",
+					"Inventory":"List[Item]",
+					"PointsEarned":"Integer",
+					"PointsHeld":"Integer"
+				},
+				"List[Developers] Developers":{
+					"Extends":"User",
+					"List[Function] Powers"
+				},
+				"List[Gamekeepers] Gamekeepers":{
+					"Extends":"User",
+					"List[Function] DevPowers"
+				},
+				"Type[GameElement] Items":{
+					"Name":"String"
+					"Sprite":"Optional<Image>"
+					"UUID":"String"
+				},
+				"Type[Trash] TrashItems":{
+					"Extends":"GameElement"
+					"PointWorth":"Integer",
+					"CorrectBin":"Type: Extends Bin",
+					"SpawnWeight":"Function: returns Integer"
+				},
+				"Type[Bin] Bins":{
+					"Extends":"GameElement",
+					"Static":true
+				},
+				"Type[Purchases] PointShop":{
+					"PointCost": "Integer",
+					"ItemGranted": "Dict[GameElement,Integer Amount]",
+				},
+				"List[Type[Question] Quiz] Quizzes":{
+					"Extends":"GameElement",
+					"Answers":"List[String]",
+					"CorrectAnswer":"String: from Answers"
+				}
+			}
+		}
+	},
+	"Comments":[
+		"Not Done yet-- Christopher"
+	]
+}
