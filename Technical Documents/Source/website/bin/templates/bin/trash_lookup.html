@@ -1,0 +1,44 @@
+{% extends 'logins/base_loggedin_back.html' %}
+
+{% block content %}
+
+<!-- Container for the trash detail view -->
+<div class="container-fluid">
+    <div class="row form">
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+        <div class="col-sm-8 col-md-4 col-lg-4 form">
+
+            <!-- Row to display the trash item details -->
+            <div class="row align-items-center bin_item_row">
+                <div class="col-0"></div>
+                <div class="col-12">
+
+                    <!-- Display the amount of a specific trash item collected by the user -->
+                    <div class="img_details">
+                        {% if bin_item %}
+                            <h2>{{ bin_item.amount }}</h2>
+                        {% else %}
+                            <h2>0</h2>
+                        {% endif %}
+
+                        <!-- Display the trash item image and name -->
+                        <img src="{{ trash.image.url }}" height="200px" width="200px"><br><br>
+                        <h2>{{ trash.name }}</h2><br>
+
+                        <!-- Display a message based on the number of trash items collected -->
+                        {% if bin_item %}
+                            <p>{{ bin_item.amount }} {{ trash.name }}! <br> well done that equates to 10 turtles saved!</p>
+                        {% else %}
+                            <p>0 {{ trash.name }}! <br> Keep looking and help save the turtles!</p>
+                        {% endif %}
+                        <br>
+                    </div>
+                </div>
+                <div class="col-0"></div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+    </div>
+</div>
+
+{% endblock %}

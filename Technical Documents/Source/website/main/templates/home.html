@@ -1,0 +1,92 @@
+{% extends 'logins/base_loggedin.html' %} {% load static %} {% block content %}
+{% csrf_token %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Main container -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- buffer col -->
+        <div class="col-sm-3 col-md-4 col-lg-4"></div>
+
+        <!-- Map container -->
+        <div id="map" style="width: 50%; height: 400px;"></div>
+
+        <!-- content column -->
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <h3 class="your-home-title text-center">Your home</h3>
+            <div class="carousel">
+                <div class="row align-items-center csl_row">
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 csl_col text-center">
+                        <p>Points</p>
+                        <p class="data">{{points}}</p>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-2 csl_col ctr_line">
+                        <div class="ctr_line"></div>
+                    </div>
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 csl_col text-center">
+                        <p>Global Rank</p>
+                        <p class="data">4</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- account action buttons -->
+            <div class="row btns_row">
+                <div class="col-lg-12 btns_col">
+                    <a class="left" onclick="location.href='{% url 'bin' %}';">
+                        <img class="icon bin" alt="bin" src="../../media/images/home_icons/bin.png" />
+                        <p>Bin</p>
+                    </a>
+
+                    <!-- label 'for' maps to hidden input that opens camera -->
+                    <label for="camera-input1">
+                        <a class="right" id="qr-icon">
+                          <img class="icon scan" src="../../media/images/home_icons/scan.png">
+                          <p>Scan</p>
+                        </a>
+                    </label>
+                    <div id="reader"></div>
+
+                    <a class="left" onclick="location.href='{% url 'settings' %}';">
+                        <img class="icon account" alt="account" src="../../media/images/home_icons/account.png" />
+                        <p>Account</p>
+                    </a>
+
+                    <a class="right" onclick="location.href='{% url 'resources' %}';">
+                        <img class="icon learn" alt="learn" src="../../media/images/home_icons/learn.png" />
+                        <p>Learn</p>
+                    </a>
+
+                    <a style="margin-right: 20px" class="left" onclick="location.href='{% url 'leaderboard' %}';">
+                        <img class="icon leaderboard" alt="leaderboard"
+                            src="../../media/images/home_icons/leaderboard.png" />
+                        <p>Leaderboard</p>
+                    </a>
+
+                    <a class="right" onclick="location.href='{% url 'logins:login' %}';">
+                        <img class="icon logout" alt="logout" src="../../media/images/home_icons/logout.png" />
+                        <p>Logout</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- buffer col -->
+        <div class="col-sm-3 col-md-4 col-lg-4"></div>
+    </div>
+</div>
+
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLyht1b11gHk0xlBXJi5JryJ8FLlh5waA&callback=initMap&v=weekly"
+    defer></script>
+
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/upng-js/2.1.0/UPNG.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<script src="{% static 'qr-scanner.js' %}"></script>
+<script> window.events = {{ events|safe }}; </script>
+<script src="{% static 'google-maps.js' %}"></script>
+
+{% endblock %}

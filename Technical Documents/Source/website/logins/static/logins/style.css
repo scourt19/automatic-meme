@@ -1,0 +1,395 @@
+
+/* navbar */
+
+#nav {
+    font-family: 'Circular Std', sans-serif;
+    font-size: x-large;
+    background-color: #003c3c;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    color: #F7FFF7;
+}
+
+nav #username {
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+
+/* login and registration */
+
+.btns_row button {
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn.btn-primary {
+    color: #F7FFF7 !important;
+    background-color: #285943 !important;
+    border: none;
+}
+
+button {
+    width: 100px;
+}
+
+.login_title, .container_title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.login_title .text, .container_title .text {
+    color: #003c3c;
+    text-align: center;
+}
+
+.form-group label {
+    text-align: left;
+}
+
+.btns_row {
+    text-align: center;
+    margin-top: 5%;
+}
+
+/******** HOME ********/
+
+/* map */
+#map {
+    height: 300px !important;
+    width: 100% !important;
+    border: solid 1px black !important;
+}
+
+/* title text */
+.your-home-title {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #003C3C;
+}
+
+/* carousel */
+.row.csl_row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    height: 100%;
+}
+
+.carousel {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 0 10px #003C3C;
+    border-radius: 1.5%;
+    margin-top: 2%;
+}
+
+.carousel .data {
+    font-size: 30px;
+}
+
+/* buttons */
+
+.btns_col a {
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-decoration: none !important;
+}
+
+a.left p, a.right p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #003c3c;
+}
+
+#camera-input {
+    flex-wrap: wrap;
+    background-color: red;
+    src: "../../../media/images/home_icons/scan.png";
+}
+
+.btns_col .bin, .btns_col .scan {
+    margin-top: 20px;
+}
+
+.btns_col .account, .btns_col .leaderboard, .btns_col .logout, .btns_col .learn {
+    margin-top: 10px;
+}
+
+.btns_col img {
+    height: 40px;
+    width: 40px;
+}
+
+/********* player_bin *********/
+.bin .title-container {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.bin .title-container p {
+    text-align: center;
+    color: #003C3C;
+    font-weight: 700;
+    display: inline;
+    margin-left: 10%;
+}
+
+.bin .title-container img {
+    text-align: left;
+}
+
+.points-row {
+    margin-top: 5%;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+}
+
+#current-points h6, #lifetime-points h6 {
+    color: #003C3C;
+    font-weight: 300;
+}
+
+#current-points p, #lifetime-points p {
+    display: block;
+    font-weight: bold;
+    font-size: 24px;
+    color: #003C3C;
+}
+
+#lifetime-points p {
+    display: block;
+}
+
+.item-holder {
+    top: -50%;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.item-holder p {
+    display: block;
+    margin: auto;
+    color: #003C3C;
+}
+
+.item-holder .image-title {
+    font-weight: 600;
+    margin: auto;
+}
+
+
+/* leaderboard */
+
+.table_div {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+/* user account */
+
+.row.user_account {
+    height: 300px;
+    text-align: center;
+}
+
+#play_guide {
+    height: 300px;
+    width: 100%;
+}
+
+#play_guide ol {
+    text-align: left;
+}
+
+/* quiz */
+
+#quiz_questions_container {
+    text-align: center;
+}
+
+.question {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.question .form-check {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* modals */
+
+.modal-header.correct {
+    background-color: #003c3c !important;
+    color: #F7FFF7;
+}
+
+.modal-header.incorrect {
+    background-color: red !important;
+    color: #F7FFF7;
+}
+
+/* store */
+
+.table .reward_img {
+    height: 50px;
+    width: 50px;
+}
+
+.table .content {
+    margin: auto;
+}
+
+.table .points p{
+    margin-top: 10px;
+}
+
+.table button {
+    margin-top: 5px;
+}
+
+
+/********** learn **********/
+
+#learn-page .title {
+    color: #003C3C;
+    font-size: 20px;
+}
+
+.vid-col {
+    padding: 0 !important;
+}
+
+#video-container {
+    height: 250px;
+    width: 100%;
+}
+
+.title.learn-more {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.video-scrolling-wrapper {
+    margin-top: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap
+}
+.card {
+    display: inline-block;
+  }
+.sub-vid.first {
+    margin-left: 20px;
+}
+.sub-vid {
+    height: 200px;
+    width: 75%;
+}
+
+.sub-vid.i {
+    margin-left: 20px;
+}
+
+#link-container {
+    padding: 12px;
+    margin-top: 20px;
+    width: 84%;
+    display: inline-block;
+    border-radius: 10px;
+    border: solid 1px #003C3C;
+}
+
+#exe-link {
+    text-decoration: none;
+    color: #003C3C;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/********** STORE PAGE **********/
+#store-page .carousel {
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 0 10px #003c3c;
+    border-radius: 1.5%;
+    margin-top: 2%;
+}
+
+.your-store-title {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #003C3C;
+}
+
+.row.store.csl_row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    height: 75%;
+    align-items: normal !important;
+}
+
+.buy-btn-row {
+    padding-top: 4%;
+    text-align: center;
+    height: 25%;
+    border-bottom-left-radius: 1.5%;
+    border-bottom-right-radius: 1.5%;
+    background-color: #00DEA5;
+    color: white;
+    font-weight: 700;
+}
+
+#store-page #store-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: white;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#store-page .price {
+    color: #003C3C;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#store-page .desc {
+    margin-top: 6%;
+    font-size: 12px;
+    text-align: left;
+}
+
+#store-img {
+    border-radius: 50%;
+}
+
+/********** INDEX PAGE **********/
+
+.action-btn {
+    background-color: #003C3C;
+    color: #F7FFF7;
+    padding: 10px 0px;
+    border-radius: 8px;
+    width: 60%;
+}

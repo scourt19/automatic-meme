@@ -1,0 +1,50 @@
+{% extends 'logins/base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row login_title">
+            <div class="col-md-12 col-lg-12 text">
+                <h3>Register</h3>
+            </div>
+        </div>
+
+        <div class="row form">
+            <!-- buffer col -->
+            <div class="col-sm-3 col-md-4 col-lg-4"></div>
+
+            <!-- content column -->
+            <div class="col-sm-6 col-md-4 col-lg-4 form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        <input type="text" class="form-control" id="id_username" name="username" placeholder="Enter username"><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_email">Email</label>
+                        <input type="email" class="form-control" id="id_email" name="email" placeholder="Enter email"><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_password1">Password</label>
+                        <input type="password" class="form-control" id="id_password1" name="password1" placeholder="Enter password"><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_password2">Confirm password</label>
+                        <input type="password" class="form-control" id="id_password2" name="password2" placeholder="Confirm password"><br>
+                    </div>
+
+                    <div class="row btns_row">
+                        <div class="col-lg-12 btns_col">
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- buffer col -->
+            <div class="col-sm-3 col-md-4 col-lg-4"></div>
+        </div>
+    </div>
+{% endblock %}

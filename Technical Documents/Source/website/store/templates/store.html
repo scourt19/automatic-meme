@@ -1,0 +1,43 @@
+{% extends 'logins/base_loggedin_back.html' %}
+
+{% block content %}
+
+<div class="container-fluid" id="store-page">
+    <div class="row form">
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+        <div class="col-sm-8 col-md-4 col-lg-4 vid-col" style="text-align: center;">
+            <div class="row">
+                <div class="col-0"></div>
+                <div class="col-12" style="padding-left: 7%; padding-right: 7%;">
+                    <h3 class="your-store-title">Store</h3>
+
+                    {% for item in items %}
+                    <div class="carousel">  
+                        <div class="row store align-items-center csl_row">
+                            <div class="col-4 col-sm-6 col-sm-6 col-md-5 col-lg-5 csl_col left-col">
+                                <div id="store-pic" >
+                                    <img id="store-img" src="{{ item.image.url }}" height="100px" width="100px">
+                                </div>
+                                <p class="price">${{ item.cost }}</p>
+                            </div>
+                            <div class="col-8 col-sm-6 col-md-2 col-lg-2 csl_col ctr_line">
+                                <div id="description-div" >
+                                    <p class="desc">{{ item.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buy-btn-row">
+                            <a href="{% url 'redeem_item' item_id=item.itemId %}">REDEEM</a>
+                        </div>
+                    </div>
+                    <br>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-0"></div>
+        </div>
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+    </div>
+</div>
+
+{% endblock %}

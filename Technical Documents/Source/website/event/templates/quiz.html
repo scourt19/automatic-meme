@@ -1,0 +1,28 @@
+{% extends 'logins/base_loggedin_back.html' %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row user_account">
+    <div class="col-sm-3 col-md-4 col-lg-4"></div>
+    <div class="col-sm-6 col-md-4 col-lg-4 form">
+      <div id="quiz_questions_container">
+        <br>
+        <img src="{{ event.trashId.image.url }}" alt="{{ item.trash.name }}" class="img-fluid mb-3" style="height: 50px; width: 50px;">
+        <h2>Trash: {{ event.trashId.name }}</h2>
+        <h4>Points: {{ event.trashId.value }}</h4>
+        <h4>Location: {{ event.locationId.buildingName }}</h4>
+        <h4>End date: {{ event.endDateTime }}</h4>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if error %}
+          <div class="alert alert-danger">{{ error }}</div>
+          {% endif %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-4 col-lg-4"></div>
+  </div>
+</div>
+{% endblock %}

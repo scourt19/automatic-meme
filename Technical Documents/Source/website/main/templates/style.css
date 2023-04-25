@@ -1,0 +1,106 @@
+#nav {
+    font-family: 'Outfit', sans-serif;
+    font-size:x-large;
+    background-color: #003c3c;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    color: #F7FFF7;
+}
+
+nav #username {
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+
+.btns_row button {
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn.btn-primary {
+    color: #F7FFF7 !important;
+    background-color: #285943 !important;
+    border: none;
+}
+
+button {
+    width: 100px;
+}
+
+.login_title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.login_title .text {
+    color: #343434;
+    text-align: center;
+}
+
+.form-group label {
+    text-align: left;
+}
+
+.btns_row {
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+
+.row.csl_row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    height: 100%;
+}
+
+.carousel {
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 0 10px #bbbbbb;
+    border-radius: 1.5%;
+    margin-top: 3%;
+}
+
+.carousel .data {
+    font-size: 30px;
+}
+
+/* player_bin */
+.row.player_bin {
+    margin-left: 8%;
+    height: 300px;
+
+}
+
+.player_bin .inner {
+    height: 150px;
+}
+
+.row.inner div {
+    margin: auto;
+}
+
+
+/* bin item */
+.img_details {
+    text-align: center;
+    margin-top: 100px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0px 0px 5px #EFF1F3;
+}
+
+/* leaderboard */
+
+.table_div {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
